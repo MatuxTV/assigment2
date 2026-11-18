@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Radar Console</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Smart Radar Console</h1>
+    <div class="chips">
+      <span id="link" class="chip">link</span>
+      <span id="state" class="chip state">IDLE</span>
+      <span id="remote" class="chip" hidden>REMOTE</span>
+      <span id="temp" class="chip">– °C</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="radar-card">
+      <svg id="radar" viewBox="0 0 440 240" role="img" aria-label="Radar sectors"></svg>
+      <ul class="legend">
+        <li><i class="k-none"></i>not scanned</li>
+        <li><i class="k-clear"></i>clear</li>
+        <li><i class="k-pre"></i>pre-alarm range</li>
+        <li><i class="k-alarm"></i>alarm range</li>
+      </ul>
+    </section>
+
+    <section class="side">
+      <div class="panel">
+        <h2>Control</h2>
+        <div class="row">
+          <button id="start">Start</button>
+          <button id="stop">Stop</button>
+          <button id="reset">Reset alarm</button>
+        </div>
+        <div class="row">
+          <button id="take">Take control</button>
+          <button id="release">Release control</button>
+        </div>
+        <label class="angle">
+          <span>Radar angle <b id="angleVal">90</b>°</span>
+          <input id="angle" type="range" min="0" max="180" value="90" disabled>
+        </label>
+        <p class="hint" id="hint"></p>
+      </div>
+
+      <div class="panel">
+        <h2>Sectors</h2>
+        <table>
+          <thead><tr><th>#</th><th>Angle</th><th>Object</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <h2>Serial log</h2>
+        <pre id="log"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/src/app.js"></script>
+</body>
+</html>

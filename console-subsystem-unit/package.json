@@ -1,0 +1,31 @@
+{
+  "name": "console-subsystem-unit",
+  "version": "1.0.0",
+  "description": "Smart Radar System - Console Subsystem (CSU), TypeScript",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:server": "tsc -p tsconfig.json",
+    "build:client": "tsc -p tsconfig.client.json",
+    "build": "npm run build:server && npm run build:client",
+    "start": "node dist/server/main.js",
+    "mock": "node dist/server/main.js --mock",
+    "dev": "npm run build:client && tsx server/main.ts --mock",
+    "test": "tsx --test \"server/**/*.test.ts\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@serialport/parser-readline": "^13.0.0",
+    "serialport": "^13.0.0",
+    "ws": "^8.22.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/ws": "^8.18.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
