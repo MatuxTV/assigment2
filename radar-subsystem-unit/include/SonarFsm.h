@@ -8,10 +8,10 @@
 //      IDLE --req--> TRIG --> WAIT --echo | timeout--> IDLE
 //                    trig=1   (done pulse)
 //
-//  Hardware glue (in the .ino):
+//  Hardware glue (in the main.cpp):
 //    * trigPin  <= sonar.trig.q               (Moore: state == TRIG)
 //    * the echo ISR measures the pulse width; while `armEcho()`
-//      is true the .ino clears its "captured" flag, afterwards it
+//      is true the main.cpp clears its "captured" flag, afterwards it
 //      feeds in.echoValid / in.echoUs.
 //    * this is the usual VHDL pattern: an asynchronous input is
 //      captured by an ISR and enters the FSM as a synchronised

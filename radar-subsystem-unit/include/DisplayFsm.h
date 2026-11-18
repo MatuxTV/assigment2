@@ -14,12 +14,12 @@
 //
 //  At the start of WRITE a frame is composed in `buf_`; then every
 //  tick the pair (wrIdx, wrCh) is published with the `wr` pulse and
-//  the .ino sends it to the LCD.
+//  the main.cpp sends it to the LCD.
 //
 //  Layout:
 //      PREALARM   23.5C         <- state, temperature
 //      S 5/12  45cm             <- last visited sector, distance
-//  in.on is false in IDLE/SLEEP: nothing is written (the .ino
+//  in.on is false in IDLE/SLEEP: nothing is written (the main.cpp
 //  clears the screen and switches the backlight off).
 // ============================================================
 class DisplayFsm : public Fsm {

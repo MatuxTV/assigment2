@@ -16,7 +16,7 @@
 //      (sector data is refreshed on the next pass anyway).
 //
 //      txValid pulse + txType/txA/txB/txC hold the message that the
-//      .ino prints with the proto::send*() helpers.
+//      main.cpp prints with the proto::send*() helpers.
 //
 //  The ring buffer is RAM: a slot is written in comb() but only
 //  becomes visible when `count` is committed.

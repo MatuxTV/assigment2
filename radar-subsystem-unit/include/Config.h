@@ -14,13 +14,13 @@
 #define PIN_BTN_RESET   4
 
 // ---------- actuators ---------------------------------------
-#define PIN_LED_ON      11   // green
+#define PIN_LED_ON      11  // green
 #define PIN_LED_ALARM   12  // red
 #define PIN_SERVO       10  // Timer1 PWM (Servo library)
 
 // ---------- HC-SR04 -----------------------------------------
 #define PIN_SONAR_TRIG  9
-#define PIN_SONAR_ECHO  8   // INT1 - echo width measured by ISR
+#define PIN_SONAR_ECHO  8   // PCINT0 - echo width measured by pin-change ISR (main.cpp)
 
 // ---------- analog ------------------------------------------
 #define PIN_POT         A0

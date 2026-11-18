@@ -22,7 +22,7 @@
 // ------------------------------------------------------------
 namespace proto {
 
-// state ids - must match State::id()
+// state ids - must match RsuState (ControllerFsm.h)
 enum StateId : uint8_t {
   ST_IDLE     = 0,
   ST_WORKING  = 1,

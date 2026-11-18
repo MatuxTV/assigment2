@@ -1,4 +1,4 @@
-// Wire protocol of the RSU (see radar-subsystem-unit/Protocol.h).
+// Wire protocol of the RSU (see radar-subsystem-unit/include/Protocol.h).
 //
 //  RSU -> CSU   STATE,<id>,<NAME>
 //               SEC,<sector>,<angle>,<cm>,<detected>

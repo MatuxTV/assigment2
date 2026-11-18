@@ -51,7 +51,7 @@ static Servo             servo;
 static LiquidCrystal_I2C lcd(LCD_I2C_ADDR, LCD_COLS, LCD_ROWS);
 static CommandParser     parser;
 
-// echo width captured by the INT1 ISR (the only asynchronous input)
+// echo width captured by the PCINT0 ISR (the only asynchronous input)
 static volatile uint32_t echoRiseUs  = 0;
 static volatile uint32_t echoWidthUs = 0;
 static volatile bool     echoCaptured = false;

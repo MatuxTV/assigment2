@@ -28,7 +28,7 @@ flowchart LR
     BTN[START / STOP / RESET<br/>buttons]
     POT[POT]
     LM[TEMP sensor]
-    ECHO[HC-SR04 echo<br/>INT1 ISR]
+    ECHO[HC-SR04 echo<br/>pin-change ISR]
     RX[Serial RX]
   end
 
@@ -178,7 +178,7 @@ end sector measured once per pass.
 ## 4. SonarFsm – non-blocking HC-SR04 measurement
 
 No `pulseIn()` is used. The width of the echo is measured by an interrupt service routine on
-INT1; the FSM only sees the result as the synchronised signals `echoValid` / `echoUs`.
+a pin-change interrupt (PCINT0, D8); the FSM only sees the result as the synchronised signals `echoValid` / `echoUs`.
 
 ```mermaid
 stateDiagram-v2

@@ -65,18 +65,18 @@ Plain text was chosen deliberately: it can be read in the serial monitor and nee
 
 ![Breadboard schematic](image.png)
 
-Pin assignment (all in `radar-subsystem-unit/Config.h`):
+Pin assignment (all in `radar-subsystem-unit/include/Config.h`):
 
 | Component | Pin | Note |
 |---|---|---|
 | START button | D2 | INT0, `INPUT_PULLUP`, only pin that wakes the MCU |
-| HC-SR04 ECHO | D3 | INT1, pulse width measured in an ISR |
-| STOP button | D4 | `INPUT_PULLUP` |
-| RESET button | D5 | `INPUT_PULLUP` |
-| HC-SR04 TRIG | D6 | |
-| ON led (green) | D7 | 220 Ω series resistor |
-| ALARM led (red) | D8 | 220 Ω series resistor |
-| Servo | D9 | Timer1 / Servo library |
+| STOP button | D3 | `INPUT_PULLUP` |
+| RESET button | D4 | `INPUT_PULLUP` |
+| HC-SR04 ECHO | D8 | PCINT0 (pin-change interrupt), pulse width measured in an ISR |
+| HC-SR04 TRIG | D9 | |
+| Servo | D10 | Timer1 / Servo library |
+| ON led (green) | D11 | 220 Ω series resistor |
+| ALARM led (red) | D12 | 220 Ω series resistor |
 | Potentiometer | A0 | |
 | Temperature sensor (LM35) | A1 | `TEMP_IS_TMP36 = 0` |
 | LCD I2C | SDA / SCL | address `0x27` (`LCD_I2C_ADDR`) |

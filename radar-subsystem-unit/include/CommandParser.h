@@ -6,7 +6,7 @@
 //  Parser for the CSU -> RSU lines. Pure C++ (no Arduino), so
 //  it is testable on the PC.
 //
-//  The .ino feeds it byte by byte. While a command is pending
+//  main.cpp feeds it byte by byte. While a command is pending
 //  it refuses more bytes - they simply stay in the serial
 //  buffer until the FSM has consumed the command.
 // ============================================================
